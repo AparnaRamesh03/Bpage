@@ -1,0 +1,140 @@
+<html>
+<body>
+<script>
+
+<script> 
+function validate()                                    
+{ 
+    var name = document.forms["registration form"]["name"];
+    var username = document.forms["registration form"]["uname"];    
+    var email = document.forms["registration form"]["Email"]; 
+
+    var phone = document.forms["registration form"]["phoneno"];    
+    var password1 = document.forms["registration form"]["pwd1"];  
+    var password2 = document.forms["registration form"]["pwd2"];
+    
+     var designation =  document.forms["registration form"]["desig"];
+    
+   
+    if (name.value == "")                                  
+    { 
+        window.alert("Please enter your name."); 
+        name.focus(); 
+        return false; 
+    } 
+    if (username.value == "")                                  
+    { 
+        window.alert("Please enter your username."); 
+        username.focus(); 
+        return false; 
+    } 
+       
+    if (email.value == "")                                   
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+
+   
+    if (phone.value == ""  || isNaN(phone.value))                          
+    { 
+        window.alert("Please enter your telephone number."); 
+        phone.focus(); 
+        return false; 
+    } 
+    if (password1.value == "")                        
+    { 
+        window.alert("Please enter your password"); 
+        password1.focus(); 
+        return false; 
+    } 
+    if (password2.value == "")                        
+    { 
+        window.alert("Please confirm your password"); 
+        password2.focus(); 
+        return false; 
+    } 
+   if(password2.value==password1.value)
+   {
+   password2.style.backgroundColor="green";
+   }
+   if(password2.value!=password1.value)
+   {
+   password2.style.backgroundColor="red";
+   password2.focus();
+   return false;
+   }
+if (designation.selectedIndex < 1)                  
+    { 
+        alert("Please select your designation."); 
+        designation.focus(); 
+        return false; 
+    } 
+   
+    return true;
+   
+}</script> 
+<script>
+function openlogin() {
+  document.getElementById("login1").style.display = "block";
+}
+
+function openregister() {
+  document.getElementById("register1").style.display = "block";
+}
+function h1()
+{
+document.getElementByClassName("close").style.display = "block";
+}
+window.onclick = function(event) {
+  if (event.target == log) {
+    log.style.display = "none";
+  }
+}
+</script>
+<form name="registration form" class="ex4" id="register form" action="welcome.php" align="center" onsubmit="return validate()" method="post">
+<center>
+<h1>PROSPECTIVE CLIENT ENQUIRY</h1></center>
+<table allign="center">
+<tr><td>Salutation</td><td>dr.<input type="radio" name="a" value="drs"/>ms.<input type="radio" name="a" value="mrs"/>Mr.<input type="radio" name="a" value="mr"/>
+
+<tr><td>Your Name</td><td><input type="text" name="name" onkeypress="return((event.charCode>64 && event.charCode<91)||(event.charCode>96 && event.charCode<123))"></td></tr>
+<tr><td>Your Title</td><td><input type="text" name="name" onkeypress="return((event.charCode>64 && event.charCode<91)||(event.charCode>96 && event.charCode<123))"></td></tr>
+<tr><td>Your Organization's name</td><td><input type="text" name="name" onkeypress="return((event.charCode>64 && event.charCode<91)||(event.charCode>96 && event.charCode<123))"></td></tr><tr><td>Username</td><td><input type="text" name="uname"></td></tr>
+<tr><td>Are you the hiring leader?</td><td>YES<input type="radio" name="b" value="yes"/>NO<input type="radio" name="b" value="no"/>
+<tr><td>Search position title</td><td><input type="text" name="name" onkeypress="return((event.charCode>64 && event.charCode<91)||(event.charCode>96 && event.charCode<123))"></td></tr><tr><td>Username</td><td><input type="text" name="uname"></td></tr>
+<tr><td>Base Location of the position</td><td><input type="text" name="name" onkeypress="return((event.charCode>64 && event.charCode<91)||(event.charCode>96 && event.charCode<123))"></td></tr><tr><td>Username</td><td><input type="text" name="uname"></td></tr>
+<tr><td><label>Target Annual Gross Compensation Range for This Position</label>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select id="ab">
+<option value="below $300K" checked>below $300K</option>
+<option value="$300-$500K">$300-$500K</option>
+<option value="$1MM-2.5MM">$1MM-2.5MM</option>
+<option value=">>2.5MM">>>2.5MM</option>
+</select></td></tr>
+<tr><td>Your mobile number</td><td><input type="password" name="pwd1"size="2"><input type="password" name="pwd1"size="10"></td></tr>
+<tr><td>ReConfirm Mobile number</td><td><input type="password" name="pwd2" size="2"><input type="password" name="pwd1"size="10"></td></tr>
+<tr><td>Email Id</td><td><input type="e-mail" name="Email"></td></tr> 
+<tr><td>Date Of Birth</td><td><input type="date" name="dob"></td></tr>
+<tr><td>Your current location</td><td><input type="text" name="name" onkeypress="return((event.charCode>64 && event.charCode<91)||(event.charCode>96 && event.charCode<123))"></td></tr><tr><td>Username</td><td><input type="text" name="uname"></td></tr>
+<tr><td>Anyother information that you would like to share.<textarea rows="10" cols="50"></textarea></td></tr>
+<tr><td><input type="button" name="submit" id="smt" value="submit"></td><td><input type="reset"  name="reset" id="smt" value="reset"></td></tr>
+</center>
+</table>
+</form>
+</body>
+</html>
